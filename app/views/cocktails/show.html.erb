@@ -1,0 +1,15 @@
+<% i = "<i class='fa fa-trash' aria-hidden=true></i>" %>
+<h1><%=  @cocktail.name%></h1>
+<h2>Ingredients:</h2>
+
+<% @cocktail.doses.each do |d| %>
+  <p><%= d.ingredient.name  %>:  <b><%= d.description  %> <%= link_to i.html_safe, dose_path(d.id), method: :delete %></b></p>
+<% end %>
+
+<p><%= link_to "Add ingredient", new_cocktail_dose_path(@cocktail) %> </p>
+
+
+
+
+<% console %>
+
